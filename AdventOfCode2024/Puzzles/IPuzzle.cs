@@ -2,6 +2,6 @@
 
 public interface IPuzzle
 {
-    int PuzzleOne(Input input);
-    int PuzzleTwo(Input input);
+    long PuzzleOne(Input input);
+    long PuzzleTwo(Input input);
 }
