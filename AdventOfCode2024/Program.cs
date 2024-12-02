@@ -3,8 +3,8 @@ using AdventOfCode2024.Puzzles;
 
 Dictionary<IPuzzle, string> puzzles = new()
 {
-    {new PuzzleDay0(), "TestDay.input"},
-    {new PuzzleDay1(), "DayOne.input"}
+    {new PuzzleDay1(), "DayOne.input"},
+    {new PuzzleDay2(), "DayTwo.input"}
 };
 
 foreach (var puzzle in puzzles)
