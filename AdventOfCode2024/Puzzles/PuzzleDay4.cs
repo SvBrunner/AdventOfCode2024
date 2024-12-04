@@ -4,14 +4,15 @@ namespace AdventOfCode2024.Puzzles;
 
 public class PuzzleDay4 : IPuzzle
 {
-    private static string KEYWORD = "XMAS";
+    private const string Keyword = "XMAS";
+
     public long PuzzleOne(Input input)
     {
         var lines = input.Lines.ToList();
         var startingPoints = new List<(int, int)>();
         var startingPoint = new Regex("[xX]");
 
-        for (int i = 0; i < lines.Count; i++)
+        for (var i = 0; i < lines.Count; i++)
         {
             startingPoints.AddRange(startingPoint.Matches(lines[i]).Select(m => ( m.Index, i)));
         }
@@ -31,7 +32,7 @@ public class PuzzleDay4 : IPuzzle
         return searchResults.Count(s => s);
     }
 
-    private bool FindXmas(List<string> lines, int x, int y, int index, DirectionY dirY, DirectionX dirX)
+    private static bool FindXmas(List<string> lines, int x, int y, int index, DirectionY dirY, DirectionX dirX)
     {
         var newY = dirY switch
         {
@@ -47,11 +48,11 @@ public class PuzzleDay4 : IPuzzle
         };
 
         if(newX < 0  || newY < 0 || newY >= lines.Count|| newX >= lines[newY].Length) return false;
-        if (lines[newY][newX] != KEYWORD[index]) return false;
-        return index == KEYWORD.Length - 1 || FindXmas(lines, newX, newY, index + 1, dirY, dirX);
+        if (lines[newY][newX] != Keyword[index]) return false;
+        return index == Keyword.Length - 1 || FindXmas(lines, newX, newY, index + 1, dirY, dirX);
     }
 
-    private bool FindMas(List<string> coll,int x, int y)
+    private static bool FindMas(List<string> coll,int x, int y)
     {
         if (x == 0 || y == 0 || y == coll.Count - 1 || x == coll[y].Length - 1) return false;
         var topLeft = coll[y-1][x-1];
@@ -63,7 +64,8 @@ public class PuzzleDay4 : IPuzzle
         {
             return topLeft != bottomLeft && topLeft is 'M' or 'S' && bottomLeft is 'M' or 'S';
         }
-        else if(topLeft == bottomLeft && topRight == bottomRight)
+
+        if(topLeft == bottomLeft && topRight == bottomRight)
         {
             return topLeft != topRight && topLeft is 'M' or 'S' && topRight is 'M' or 'S';
         }
@@ -76,7 +78,7 @@ public class PuzzleDay4 : IPuzzle
         var regex = new Regex("[Aa]");
         var startingPoints = new List<(int, int)>();
         
-        for (int i = 0; i < lines.Count; i++)
+        for (var i = 0; i < lines.Count; i++)
         {
             startingPoints.AddRange(regex.Matches(lines[i]).Select(m => ( m.Index, i)));
         }
