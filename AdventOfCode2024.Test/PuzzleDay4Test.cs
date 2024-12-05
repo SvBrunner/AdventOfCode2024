@@ -21,7 +21,7 @@ public class PuzzleDay4Test : PuzzleTestbase
     [SetUp]
     public void SetUp()
     {
-        FakeInput = new FakePuzzleInput(input.Split("\r\n"));
+        FakeInput = new FakePuzzleInput(input.Split(Environment.NewLine));
         Testee = new PuzzleDay4();
     }
     
