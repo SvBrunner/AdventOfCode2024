@@ -5,6 +5,6 @@ namespace AdventOfCode2024.Test;
 
 public class PuzzleTestbase
 {
-    protected IPuzzleInput _fakeInput;
-    protected IPuzzle _testee;
+    protected IPuzzleInput FakeInput;
+    protected IPuzzle Testee;
 }

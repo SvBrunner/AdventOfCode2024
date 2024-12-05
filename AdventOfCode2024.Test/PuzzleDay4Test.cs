@@ -21,14 +21,14 @@ public class PuzzleDay4Test : PuzzleTestbase
     [SetUp]
     public void SetUp()
     {
-        _fakeInput = new FakePuzzleInput(input.Split("\r\n"));
-        _testee = new PuzzleDay4();
+        FakeInput = new FakePuzzleInput(input.Split("\r\n"));
+        Testee = new PuzzleDay4();
     }
     
     [Test]
     public void PuzzleOne_ShouldReturn18()
     {
-        _testee.PuzzleOne(_fakeInput).Should().Be(18);
+        Testee.PuzzleOne(FakeInput).Should().Be(18);
     }
     
     [Test]
@@ -36,6 +36,6 @@ public class PuzzleDay4Test : PuzzleTestbase
     {
         
 
-        _testee.PuzzleTwo(_fakeInput).Should().Be(9);
+        Testee.PuzzleTwo(FakeInput).Should().Be(9);
     }
 }

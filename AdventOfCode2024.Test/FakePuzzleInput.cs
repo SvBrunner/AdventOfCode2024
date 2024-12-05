@@ -1,11 +1,6 @@
 ﻿namespace AdventOfCode2024.Test;
 
-public class FakePuzzleInput : IPuzzleInput
+public class FakePuzzleInput(ICollection<string> lines) : IPuzzleInput
 {
-    public FakePuzzleInput(ICollection<string> lines)
-    {
-        Lines = lines;
-    }
-
-    public ICollection<string> Lines { get; set; }
+    public ICollection<string> Lines { get; set; } = lines;
 }

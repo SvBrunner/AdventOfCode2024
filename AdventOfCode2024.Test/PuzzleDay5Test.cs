@@ -40,20 +40,20 @@ public class PuzzleDay5Test : PuzzleTestbase
     [SetUp]
     public void SetUp()
     {
-        _fakeInput = new FakePuzzleInput(input.Split("\r\n"));
-        _testee = new PuzzleDay5();
+        FakeInput = new FakePuzzleInput(input.Split("\r\n"));
+        Testee = new PuzzleDay5();
     }
     
     [Test]
     public void PuzzleOne_ShouldReturn143()
     {
-        _testee.PuzzleOne(_fakeInput).Should().Be(143);
+        Testee.PuzzleOne(FakeInput).Should().Be(143);
     }
     
     [Test]
     public void PuzzleTwo_ShouldReturn123()
     {
-        _testee.PuzzleTwo(_fakeInput).Should().Be(123);
+        Testee.PuzzleTwo(FakeInput).Should().Be(123);
     }
 
 }
