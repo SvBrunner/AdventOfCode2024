@@ -4,12 +4,8 @@ using Moq;
 
 namespace AdventOfCode2024.Test;
 
-public class PuzzleDay3Test
+public class PuzzleDay3Test : PuzzleTestbase
 {
-    private Mock<Input> _mockInput;
-    private PuzzleDay3 _testee;
-
-
     [SetUp]
     public void SetUp()
     {
