@@ -12,5 +12,5 @@ Dictionary<IPuzzle, string> puzzles = new()
 
 foreach (var puzzle in puzzles)
 {
-    MysterySolver.Solve(puzzle.Key, puzzle.Value);
+    PuzzleMysterySolver.Solve(puzzle.Key, puzzle.Value);
 }

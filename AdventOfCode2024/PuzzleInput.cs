@@ -2,10 +2,10 @@
 
 namespace AdventOfCode2024;
 
-public class Input
+public sealed class PuzzleInput : IPuzzleInput
 {
-    public virtual ICollection<string> Lines { get; set; }
-    public Input(string fileName)
+    public ICollection<string> Lines { get; set; }
+    public PuzzleInput(string fileName)
     {
         using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream($"AdventOfCode2024.Data.{fileName}");
         if (stream == null)

@@ -4,13 +4,13 @@ namespace AdventOfCode2024.Puzzles;
 
 public class PuzzleDay3 : IPuzzle
 {
-    public long PuzzleOne(Input input)
+    public long PuzzleOne(IPuzzleInput input)
     {
         var regex = new Regex(@"mul\((\d+),(\d+)\)");
         return input.Lines.SelectMany(line => regex.Matches(line)).Sum(match => long.Parse(match.Groups[1].Value) * long.Parse(match.Groups[2].Value));
     }
 
-    public long PuzzleTwo(Input input)
+    public long PuzzleTwo(IPuzzleInput input)
     {
         var line = input.Lines.Aggregate((a, b) => a + b);
         var regex = new Regex(@"mul\((\d+),(\d+)\)");

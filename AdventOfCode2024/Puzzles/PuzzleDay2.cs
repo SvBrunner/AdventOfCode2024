@@ -2,14 +2,14 @@
 
 public class PuzzleDay2 : IPuzzle
 {
-    public long PuzzleOne(Input input)
+    public long PuzzleOne(IPuzzleInput input)
     {
         var reports = input.Lines.Select(l => l.Split(" ").Select(int.Parse).ToList()).ToList();
 
         return reports.Sum(report => (IsValidReport(report)) ? 1 : 0);
     }
 
-    public long PuzzleTwo(Input input)
+    public long PuzzleTwo(IPuzzleInput input)
     {
         var reports = input.Lines.Select(l => l.Split(" ").Select(int.Parse).ToList()).ToList();
         var sum = 0;

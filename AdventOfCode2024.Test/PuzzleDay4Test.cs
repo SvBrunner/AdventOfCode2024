@@ -21,15 +21,14 @@ public class PuzzleDay4Test : PuzzleTestbase
     [SetUp]
     public void SetUp()
     {
-        _mockInput = new Mock<Input>("DayTwo.input");
-        _mockInput.SetupGet(m => m.Lines).Returns(input.Split("\r\n"));
+        _fakeInput = new FakePuzzleInput(input.Split("\r\n"));
         _testee = new PuzzleDay4();
     }
     
     [Test]
     public void PuzzleOne_ShouldReturn18()
     {
-        _testee.PuzzleOne(_mockInput.Object).Should().Be(18);
+        _testee.PuzzleOne(_fakeInput).Should().Be(18);
     }
     
     [Test]
@@ -37,6 +36,6 @@ public class PuzzleDay4Test : PuzzleTestbase
     {
         
 
-        _testee.PuzzleTwo(_mockInput.Object).Should().Be(9);
+        _testee.PuzzleTwo(_fakeInput).Should().Be(9);
     }
 }

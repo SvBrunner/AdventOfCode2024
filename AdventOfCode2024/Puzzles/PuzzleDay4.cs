@@ -6,7 +6,7 @@ public class PuzzleDay4 : IPuzzle
 {
     private const string Keyword = "XMAS";
 
-    public long PuzzleOne(Input input)
+    public long PuzzleOne(IPuzzleInput input)
     {
         var lines = input.Lines.ToList();
         var startingPoints = new List<(int, int)>();
@@ -72,7 +72,7 @@ public class PuzzleDay4 : IPuzzle
         return false;
     }
 
-    public long PuzzleTwo(Input input)
+    public long PuzzleTwo(IPuzzleInput input)
     {
         var lines = input.Lines.ToList();
         var regex = new Regex("[Aa]");

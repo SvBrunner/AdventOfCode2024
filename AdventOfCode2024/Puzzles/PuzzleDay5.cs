@@ -9,7 +9,7 @@ public class PuzzleDay5 : IPuzzle
     private List<PuzzleConstraint> _constraints = [];
     private List<List<int>> _books = [];
 
-    private void ParseInput(Input input)
+    private void ParseInput(IPuzzleInput input)
     {
         var lines = input.Lines;
         _constraints = [];
@@ -37,7 +37,7 @@ public class PuzzleDay5 : IPuzzle
         }
     }
 
-    public long PuzzleOne(Input input)
+    public long PuzzleOne(IPuzzleInput input)
     {
         ParseInput(input);
 
@@ -61,7 +61,7 @@ public class PuzzleDay5 : IPuzzle
         return p1;
     }
 
-    public long PuzzleTwo(Input input)
+    public long PuzzleTwo(IPuzzleInput input)
     {
         ParseInput(input);
 

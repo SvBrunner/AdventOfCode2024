@@ -3,7 +3,7 @@
 public class PuzzleDay1 : IPuzzle
 {
 
-    public long PuzzleOne(Input input)
+    public long PuzzleOne(IPuzzleInput input)
     {
         
         var (left, right) = SplitLines(input.Lines);
@@ -12,7 +12,7 @@ public class PuzzleDay1 : IPuzzle
         return left.Zip(right).Select(pair => Math.Abs(pair.First - pair.Second)).Sum();
     }
 
-    public long PuzzleTwo(Input input)
+    public long PuzzleTwo(IPuzzleInput input)
     {
         var (left, right) = SplitLines(input.Lines);
         long simScore = 0;

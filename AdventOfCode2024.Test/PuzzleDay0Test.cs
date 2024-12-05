@@ -9,20 +9,19 @@ public class PuzzleDay0Test : PuzzleTestbase
     [SetUp]
     public void SetUp()
     {
-        _mockInput = new Mock<Input>("TestDay.input");
-        _mockInput.SetupGet(m => m.Lines).Returns(["1", "2", "3", "4"]);
+        _fakeInput = new FakePuzzleInput(["1", "2", "3", "4"]);
         _testee = new PuzzleDay0();
     }
 
     [Test]
     public void PuzzleOne_ShouldReturn10()
     {
-        _testee.PuzzleOne(_mockInput.Object).Should().Be(10);
+        _testee.PuzzleOne(_fakeInput).Should().Be(10);
     }
 
     [Test]
     public void PuzzleTwo_ShouldReturn24()
     {
-        _testee.PuzzleTwo(_mockInput.Object).Should().Be(24);
+        _testee.PuzzleTwo(_fakeInput).Should().Be(24);
     }
 }

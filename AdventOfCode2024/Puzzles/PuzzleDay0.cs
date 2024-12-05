@@ -2,12 +2,12 @@
 
 public class PuzzleDay0 : IPuzzle
 {
-    public long PuzzleOne(Input input)
+    public long PuzzleOne(IPuzzleInput input)
     {
         return input.Lines.Select(int.Parse).Sum();
     }
 
-    public long PuzzleTwo(Input input)
+    public long PuzzleTwo(IPuzzleInput input)
     {
         return input.Lines.Select(int.Parse).Aggregate((a, b) => a * b);
     }
